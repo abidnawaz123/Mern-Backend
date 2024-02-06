@@ -5,8 +5,11 @@ const app = express()
 app.use(express.json())
 
 const workoutRouters = require("./routers/workoutModel")
-
+const cardRouters = require("./routers/cardModel")
+const cors = require("cors")
+app.use(cors())
 app.use("/api/workouts", workoutRouters)
+app.use("/api/card", cardRouters)
 
 const mongoose = require("mongoose")
 
